@@ -30,7 +30,7 @@ OmniCast exposes a single, high-performance endpoint: `POST /render`.
 
 ### 1. The Interactive API Docs
 The easiest way to test the API is through the auto-generated documentation.
-1. Ensure the container is running: `docker run -p 8080:8000 omnicast:v1`
+1. Ensure the container is running: `docker run -p 8080:8000 omnicast-api:v1`
 2. Open your browser to: [http://localhost:8080/docs](http://localhost:8080/docs)
 3. Click **POST /render** -> **Try it out**.
 
