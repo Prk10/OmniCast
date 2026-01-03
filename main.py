@@ -8,7 +8,7 @@ async def main():
 
     inputs = [
         {"type": "python", "file": "main.py", "output": "code.png"},
-        {"type": "markdown", "file": "README.md", "output": "science.png"}
+        {"type": "markdown", "file": "test-markdown.md", "output": "science.png"}
     ]
 
     async with PlaywrightRenderer() as renderer:
