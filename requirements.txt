@@ -1,0 +1,8 @@
+playwright
+jinja2
+markdown
+pygments
+requests
+fastapi
+uvicorn
+python-multipart

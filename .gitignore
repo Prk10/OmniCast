@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+venv/
+omnicast-env/
+.DS_Store
+output.png
+code.png
+science.png
