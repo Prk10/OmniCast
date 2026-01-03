@@ -22,3 +22,58 @@ This tool also solves the "Tokenization Limit" problem in LLMs by converting ver
 
 **Scientific Math Rendering**
 ![Math Example](assets/science.png)
+
+
+## 🔌 Usage & Integration
+
+OmniCast exposes a single, high-performance endpoint: `POST /render`.
+
+### 1. The Interactive API Docs
+The easiest way to test the API is through the auto-generated documentation.
+1. Ensure the container is running: `docker run -p 8080:8000 omnicast:v1`
+2. Open your browser to: [http://localhost:8080/docs](http://localhost:8080/docs)
+3. Click **POST /render** -> **Try it out**.
+
+### 2. CLI Usage (cURL)
+You can test the pipeline directly from your terminal.
+
+**Render Python Code:**
+```bash
+curl -X POST "http://localhost:8080/render" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "content": "def hello_world():\n    print(\"OmniCast works!\")",
+    "format_type": "python"
+  }' \
+  --output code_snippet.png
+```
+
+  ### 3. 🐍 Python Integration
+
+To integrate OmniCast into your AI agent, use this helper script:
+
+```python
+import requests
+
+def render_code(code_snippet: str, output_filename="result.png"):
+    url = "http://localhost:8080/render"
+    payload = {
+        "content": code_snippet,
+        "format_type": "python"
+    }
+    
+    try:
+        response = requests.post(url, json=payload)
+        response.raise_for_status() # Check for errors
+        
+        with open(output_filename, "wb") as f:
+            f.write(response.content)
+        print(f"✅ Success! Saved to {output_filename}")
+        
+    except Exception as e:
+        print(f"❌ Error: {e}")
+
+# Example Usage:
+if __name__ == "__main__":
+    render_code("print('Hello World')")
+```
