@@ -4,6 +4,9 @@ OmniCast is a containerized micoservice designed to bridge the gap between human
 
 This tool also solves the "Tokenization Limit" problem in LLMs by converting verbose code/math files into visual tokens, allowing Vision-Language Models (like GPT-4o) to analyze without consuming massive context windows
 
+## Why this matters in 2026?
+LLMs like Gemini 3.0 and GPT-5 are vision-native. Feeding them raw LaTeX text is inefficient. Feeding them pixels allows them to 'see' the equation structure just like a human does.
+
 ## 🚀 Key Features
 * **Universal Rendering:** Transforms Python code and Markdown into pixel-perfect PNGs.
 * **Math-Aware:** Uses MathJax to render complex mathematical equations e.g., $$E=mc^2$$
